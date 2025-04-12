@@ -1,0 +1,9 @@
+1. how to add new token types in directives.g4 used by wrangler?
+2. how to implement new token classes like ByteSize and TimeDuration in wrangler?
+3. what changes are required in RecipeVisitor.java to handle new token types?
+4. how to write a custom directive AggregateStats that can parse BYTE_SIZE and TIME_DURATION strings?
+5. how to handle parsing for strings like "100MB", "10s", "1h" etc. in wrangler core?
+6. how to resolve compilation error: cannot find symbol UsageDefinition in wrangler?
+7. how to skip checkstyle and run successful build with maven?
+8. how to create a unit test for a wrangler directive like AggregateStats?
+9. how to structure README for a Java-based wrangler extension assignment?
