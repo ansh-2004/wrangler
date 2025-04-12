@@ -64,6 +64,8 @@ directive
     | stringList
     | numberRanges
     | properties
+    | BYTE_SIZE
+    | TIME_DURATION
   )*?
   ;
 
@@ -140,7 +142,7 @@ numberRange
  ;
 
 value
- : String | Number | Column | Bool
+ : String | Number | Column | Bool | BYTE_SIZE | TIME_DURATION
  ;
 
 ecommand
@@ -194,6 +196,9 @@ stringList
 identifierList
  : Identifier (',' Identifier)*
  ;
+
+byteSize: BYTE_SIZE;
+timeDuration: TIME_DURATION;
 
 
 /*
@@ -256,6 +261,15 @@ Bool
 Number
  : Int ('.' Digit*)?
  ;
+
+BYTE_SIZE
+ : [0-9]+ ('.' [0-9]+)? (('B' | 'KB' | 'MB' | 'GB' | 'TB') | ('b' | 'kb' | 'mb' | 'gb' | 'tb'))
+ ;
+
+TIME_DURATION
+ : [0-9]+ ('.' [0-9]+)? (('ms' | 's' | 'm' | 'h' | 'd') | ('MS' | 'S' | 'M' | 'H' | 'D'))
+ ;
+
 
 Identifier
  : [a-zA-Z_\-] [a-zA-Z_0-9\-]*
